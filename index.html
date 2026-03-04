@@ -2,38 +2,21 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>STEM Society Poster</title>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Barlow+Condensed:wght@300;400;600;800&display=swap" rel="stylesheet">
 <style>
+  @page { size: 210mm 297mm; margin: 0; }
   *, ::before, ::after { margin: 0; padding: 0; box-sizing: border-box; }
 
-  /* A4 at 96dpi = 794 x 1123px. Original poster = 700 x 990px.
-     Scale: 794/700 = 1.13429. Height check: 990 * 1.13429 = 1122.9 ✓ */
-
-  @page { size: A4 portrait; margin: 0; }
-
   html, body {
-    width: 794px;
-    height: 1123px;
+    width: 210mm;
+    height: 297mm;
     overflow: hidden;
-    background: rgb(10, 10, 15);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .scale-wrap {
-    transform-origin: top left;
-    transform: scale(1.13429);
-    width: 700px;
-    height: 990px;
+    background: rgb(5,5,8);
   }
 
   .poster {
-    width: 700px;
-    height: 990px;
-    background: rgb(5, 5, 8);
+    width: 210mm;
+    height: 297mm;
+    background: rgb(5,5,8);
     position: relative;
     overflow: hidden;
     display: flex;
@@ -41,404 +24,325 @@
   }
 
   .grid-bg {
-    position: absolute;
-    inset: 0;
+    position: absolute; inset: 0;
     background-image:
-      linear-gradient(rgba(26, 61, 110, 0.18) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(26, 61, 110, 0.18) 1px, transparent 1px);
-    background-size: 40px 40px;
+      linear-gradient(rgba(26,61,110,0.18) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(26,61,110,0.18) 1px, transparent 1px);
+    background-size: 12mm 12mm;
     z-index: 0;
   }
 
   .stripe {
     position: absolute;
-    top: -80px; right: -60px;
-    width: 320px; height: 700px;
-    background: rgb(26, 61, 110);
+    top: -24mm; right: -18mm;
+    width: 96mm; height: 210mm;
+    background: rgb(26,61,110);
     transform: rotate(-12deg);
-    z-index: 1;
-    opacity: 0.5;
+    z-index: 1; opacity: 0.5;
   }
 
   .stripe-2 {
     position: absolute;
-    bottom: -100px; left: -80px;
-    width: 260px; height: 500px;
-    background: rgb(232, 98, 42);
+    bottom: -30mm; left: -24mm;
+    width: 78mm; height: 150mm;
+    background: rgb(232,98,42);
     transform: rotate(-12deg);
-    z-index: 1;
-    opacity: 0.18;
+    z-index: 1; opacity: 0.18;
   }
 
   .top-bar {
-    position: relative;
-    z-index: 10;
-    background: rgb(232, 212, 77);
-    padding: 10px 32px;
+    position: relative; z-index: 10;
+    background: rgb(232,212,77);
+    padding: 3mm 10mm;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-shrink: 0;
   }
-
   .top-bar span {
-    font-family: 'Space Mono', monospace;
-    font-size: 11px;
+    font-family: 'Courier New', monospace;
+    font-size: 3.3mm;
     letter-spacing: 0.2em;
-    color: rgb(5, 5, 8);
+    color: rgb(5,5,8);
     text-transform: uppercase;
     font-weight: 700;
   }
 
   .content {
-    position: relative;
-    z-index: 10;
+    position: relative; z-index: 10;
     flex: 1;
     display: flex;
     flex-direction: column;
-    padding: 0 42px;
+    padding: 0 12mm;
+    min-height: 0;
   }
 
   .atom-wrap {
     position: absolute;
-    top: 60px; right: 30px;
-    width: 240px; height: 240px;
-    z-index: 5;
-    opacity: 0.55;
+    top: 18mm; right: 9mm;
+    width: 72mm; height: 72mm;
+    z-index: 5; opacity: 0.55;
   }
-
   .atom-wrap svg { width: 100%; height: 100%; }
 
-  .headline-block { margin-top: 52px; }
+  .headline-block { margin-top: 16mm; }
 
   .eyebrow {
-    font-family: 'Space Mono', monospace;
-    font-size: 11px;
+    font-family: 'Courier New', monospace;
+    font-size: 3.3mm;
     letter-spacing: 0.35em;
-    color: rgb(232, 98, 42);
+    color: rgb(232,98,42);
     text-transform: uppercase;
-    margin-bottom: 14px;
+    margin-bottom: 4mm;
   }
 
   .headline {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 112px;
+    font-family: 'Arial Black', 'Arial', sans-serif;
+    font-size: 33mm;
     line-height: 0.88;
-    color: rgb(245, 243, 238);
-    letter-spacing: 0.01em;
+    font-weight: 900;
+    text-transform: uppercase;
   }
-
-  .headline .stem { color: rgb(232, 212, 77); display: block; }
-
+  .headline .stem   { color: rgb(232,212,77); display: block; }
   .headline .society {
-    color: rgb(245, 243, 238);
+    color: rgb(245,243,238);
     display: block;
-    font-size: 68px;
+    font-size: 20mm;
     letter-spacing: 0.06em;
   }
 
   .divider {
-    width: 100%;
-    height: 1px;
-    background: linear-gradient(90deg, rgb(232, 98, 42), transparent);
-    margin: 28px 0;
+    width: 100%; height: 0.3mm;
+    background: linear-gradient(90deg, rgb(232,98,42), transparent);
+    margin: 8mm 0;
+    flex-shrink: 0;
   }
 
   .tagline {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 19px;
+    font-family: 'Arial Narrow', Arial, sans-serif;
+    font-size: 5.7mm;
     font-weight: 300;
-    color: rgba(245, 243, 238, 0.7);
+    color: rgba(245,243,238,0.7);
     letter-spacing: 0.08em;
     line-height: 1.5;
-    max-width: 380px;
+    max-width: 114mm;
   }
-
-  .tagline strong { color: rgb(245, 243, 238); font-weight: 600; }
+  .tagline strong { color: rgb(245,243,238); font-weight: 600; }
 
   .pillars {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 14px;
-    margin-top: 36px;
+    gap: 4mm;
+    margin-top: 11mm;
+    flex-shrink: 0;
   }
-
   .pillar {
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 16px 18px;
+    border: 0.3mm solid rgba(255,255,255,0.1);
+    padding: 5mm 5.5mm;
     position: relative;
-    background: rgba(255, 255, 255, 0.03);
+    background: rgba(255,255,255,0.03);
   }
-
   .pillar::before {
     content: '';
-    position: absolute;
-    top: 0; left: 0;
-    width: 3px; height: 100%;
+    position: absolute; top: 0; left: 0;
+    width: 0.9mm; height: 100%;
   }
-
-  .pillar:nth-child(1)::before { background: rgb(78, 205, 196); }
-  .pillar:nth-child(2)::before { background: rgb(232, 212, 77); }
-  .pillar:nth-child(3)::before { background: rgb(232, 98, 42); }
-  .pillar:nth-child(4)::before { background: rgb(167, 139, 250); }
-
-  .pillar-icon { font-size: 22px; margin-bottom: 6px; display: block; }
-
+  .pillar:nth-child(1)::before { background: rgb(78,205,196); }
+  .pillar:nth-child(2)::before { background: rgb(232,212,77); }
+  .pillar:nth-child(3)::before { background: rgb(232,98,42); }
+  .pillar:nth-child(4)::before { background: rgb(167,139,250); }
+  .pillar-icon { font-size: 6.6mm; margin-bottom: 2mm; display: block; }
   .pillar-title {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 15px;
-    font-weight: 800;
+    font-family: 'Arial Narrow', Arial, sans-serif;
+    font-size: 4.5mm; font-weight: 800;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: rgb(245, 243, 238);
-    margin-bottom: 4px;
-  }
-
-  .pillar-desc {
-    font-family: 'Space Mono', monospace;
-    font-size: 9.5px;
-    color: rgba(245, 243, 238, 0.5);
-    line-height: 1.6;
+    color: rgb(245,243,238);
   }
 
   .info-block {
-    margin-top: 20px;
+    margin-top: 6mm;
     display: flex;
     gap: 0;
-    border: 1px solid rgba(232, 212, 77, 0.35);
+    border: 0.3mm solid rgba(232,212,77,0.35);
+    flex-shrink: 0;
   }
-
   .info-item {
     flex: 1;
-    padding: 18px 22px;
-    border-right: 1px solid rgba(232, 212, 77, 0.2);
+    padding: 5mm 6.5mm;
+    border-right: 0.3mm solid rgba(232,212,77,0.2);
   }
-
   .info-item:last-child { border-right: none; }
-
   .info-label {
-    font-family: 'Space Mono', monospace;
-    font-size: 9px;
-    letter-spacing: 0.25em;
+    font-family: 'Courier New', monospace;
+    font-size: 2.7mm; letter-spacing: 0.25em;
     text-transform: uppercase;
-    color: rgb(232, 212, 77);
-    margin-bottom: 6px;
+    color: rgb(232,212,77);
+    margin-bottom: 2mm;
   }
-
   .info-value {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 26px;
-    color: rgb(245, 243, 238);
+    font-family: 'Arial Black', Arial, sans-serif;
+    font-size: 7.8mm;
+    color: rgb(245,243,238);
     letter-spacing: 0.04em;
     line-height: 1.1;
+    font-weight: 900;
   }
-
   .info-sub {
-    font-family: 'Space Mono', monospace;
-    font-size: 9px;
-    color: rgba(245, 243, 238, 0.4);
-    margin-top: 3px;
+    font-family: 'Courier New', monospace;
+    font-size: 2.7mm;
+    color: rgba(245,243,238,0.4);
+    margin-top: 1mm;
   }
 
   .cta-block {
-    margin-top: 18px;
+    margin-top: 5mm;
+    margin-bottom: 6mm;
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 6mm;
+    flex-shrink: 0;
   }
-
   .cta-pill {
-    background: rgb(232, 98, 42);
-    color: rgb(245, 243, 238);
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 15px;
-    font-weight: 800;
+    background: rgb(232,98,42);
+    color: rgb(245,243,238);
+    font-family: 'Arial Narrow', Arial, sans-serif;
+    font-size: 4.5mm; font-weight: 800;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    padding: 13px 28px;
+    padding: 4mm 8mm;
     display: inline-block;
+    white-space: nowrap;
   }
-
   .cta-sub {
-    font-family: 'Space Mono', monospace;
-    font-size: 10px;
-    color: rgba(245, 243, 238, 0.45);
+    font-family: 'Courier New', monospace;
+    font-size: 3mm;
+    color: rgba(245,243,238,0.45);
     line-height: 1.7;
   }
-
-  .cta-sub strong { color: rgba(245, 243, 238, 0.75); }
+  .cta-sub strong { color: rgba(245,243,238,0.75); }
 
   .bottom-bar {
-    position: relative;
-    z-index: 10;
-    background: rgb(26, 61, 110);
-    padding: 13px 42px;
+    position: relative; z-index: 10;
+    background: rgb(26,61,110);
+    padding: 4mm 12mm;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-shrink: 0;
   }
-
   .bottom-bar span {
-    font-family: 'Space Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 0.18em;
-    color: rgba(245, 243, 238, 0.6);
+    font-family: 'Courier New', monospace;
+    font-size: 3mm; letter-spacing: 0.18em;
+    color: rgba(245,243,238,0.6);
     text-transform: uppercase;
   }
-
-  .bottom-bar .school { color: rgb(245, 243, 238); font-weight: 700; }
+  .bottom-bar .school { color: rgb(245,243,238); font-weight: 700; }
 
   .coord {
     position: absolute;
-    font-family: 'Space Mono', monospace;
-    font-size: 8px;
-    color: rgba(26, 61, 110, 0.6);
+    font-family: 'Courier New', monospace;
+    font-size: 2.4mm;
+    color: rgba(26,61,110,0.6);
     letter-spacing: 0.15em;
     z-index: 3;
   }
+  .coord-1 { top: 24mm; left: 2.4mm; writing-mode: vertical-lr; }
+  .coord-2 { bottom: 24mm; right: 2.4mm; writing-mode: vertical-rl; transform: rotate(180deg); }
 
-  .coord-1 { top: 80px; left: 8px; writing-mode: vertical-lr; }
-  .coord-2 { bottom: 80px; right: 8px; writing-mode: vertical-rl; transform: rotate(180deg); }
-
-  .corner { position: absolute; width: 14px; height: 14px; z-index: 20; }
-
+  .corner { position: absolute; width: 4.2mm; height: 4.2mm; z-index: 20; }
   .corner::before, .corner::after {
-    content: '';
-    position: absolute;
-    background: rgb(232, 212, 77);
-    opacity: 0.5;
+    content: ''; position: absolute;
+    background: rgb(232,212,77); opacity: 0.5;
   }
+  .corner::before { width: 100%; height: 0.3mm; top: 0; left: 0; }
+  .corner::after  { width: 0.3mm; height: 100%; top: 0; left: 0; }
+  .corner.tl { top: 12.6mm; left: 3mm; }
+  .corner.tr { top: 12.6mm; right: 3mm; transform: rotate(90deg); }
+  .corner.bl { bottom: 12.6mm; left: 3mm; transform: rotate(270deg); }
+  .corner.br { bottom: 12.6mm; right: 3mm; transform: rotate(180deg); }
 
-  .corner::before { width: 100%; height: 1px; top: 0; left: 0; }
-  .corner::after  { width: 1px; height: 100%; top: 0; left: 0; }
-
-  .corner.tl { top: 42px; left: 10px; }
-  .corner.tr { top: 42px; right: 10px; transform: rotate(90deg); }
-  .corner.bl { bottom: 42px; left: 10px; transform: rotate(270deg); }
-  .corner.br { bottom: 42px; right: 10px; transform: rotate(180deg); }
-
-  .dot {
-    position: absolute;
-    width: 5px; height: 5px;
-    border-radius: 50%;
-    background: rgb(232, 98, 42);
-    z-index: 6;
-    opacity: 0.7;
-  }
-
-  .dot-1 { top: 175px; left: 38px; }
-  .dot-2 { top: 175px; right: 38px; }
+  .dot { position: absolute; width: 1.5mm; height: 1.5mm; border-radius: 50%; background: rgb(232,98,42); z-index: 6; opacity: 0.7; }
+  .dot-1 { top: 52.5mm; left: 11.4mm; }
+  .dot-2 { top: 52.5mm; right: 11.4mm; }
 </style>
 </head>
 <body>
-
-<div class="scale-wrap">
-  <div class="poster">
-    <div class="grid-bg"></div>
-    <div class="stripe"></div>
-    <div class="stripe-2"></div>
-
-    <div class="corner tl"></div>
-    <div class="corner tr"></div>
-    <div class="corner bl"></div>
-    <div class="corner br"></div>
-
-    <div class="coord coord-1">51°30′N · 0°07′W · EST. 2026</div>
-    <div class="coord coord-2">SCIENCE · TECH · ENG · MATHS</div>
-
-    <div class="atom-wrap">
-      <svg viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <ellipse cx="120" cy="120" rx="110" ry="42" stroke="#1A3D6E" stroke-width="1.2"/>
-        <ellipse cx="120" cy="120" rx="110" ry="42" stroke="#1A3D6E" stroke-width="1.2" transform="rotate(60 120 120)"/>
-        <ellipse cx="120" cy="120" rx="110" ry="42" stroke="#1A3D6E" stroke-width="1.2" transform="rotate(120 120 120)"/>
-        <circle cx="120" cy="120" r="14" fill="#E8D44D" opacity="0.9"/>
-        <circle cx="120" cy="120" r="6" fill="#050508"/>
-        <circle cx="230" cy="120" r="5" fill="#E8622A"/>
-        <circle cx="175" cy="27" r="5" fill="#4ECDC4"/>
-        <circle cx="65" cy="27" r="5" fill="#A78BFA"/>
-      </svg>
+<div class="poster">
+  <div class="grid-bg"></div>
+  <div class="stripe"></div>
+  <div class="stripe-2"></div>
+  <div class="corner tl"></div><div class="corner tr"></div>
+  <div class="corner bl"></div><div class="corner br"></div>
+  <div class="coord coord-1">51°30′N · 0°07′W · EST. 2026</div>
+  <div class="coord coord-2">SCIENCE · TECH · ENG · MATHS</div>
+  <div class="atom-wrap">
+    <svg viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <ellipse cx="120" cy="120" rx="110" ry="42" stroke="#1A3D6E" stroke-width="1.2"/>
+      <ellipse cx="120" cy="120" rx="110" ry="42" stroke="#1A3D6E" stroke-width="1.2" transform="rotate(60 120 120)"/>
+      <ellipse cx="120" cy="120" rx="110" ry="42" stroke="#1A3D6E" stroke-width="1.2" transform="rotate(120 120 120)"/>
+      <circle cx="120" cy="120" r="14" fill="#E8D44D" opacity="0.9"/>
+      <circle cx="120" cy="120" r="6" fill="#050508"/>
+      <circle cx="230" cy="120" r="5" fill="#E8622A"/>
+      <circle cx="175" cy="27" r="5" fill="#4ECDC4"/>
+      <circle cx="65" cy="27" r="5" fill="#A78BFA"/>
+    </svg>
+  </div>
+  <div class="dot dot-1"></div><div class="dot dot-2"></div>
+  <div class="top-bar">
+    <span>After School Programme · Year 12</span>
+    <span>⬡ University Admission Test Prep</span>
+  </div>
+  <div class="content">
+    <div class="headline-block">
+      <p class="eyebrow">// Launching March 2026</p>
+      <h1 class="headline">
+        <span class="stem">STEM</span>
+        <span class="society">Society</span>
+      </h1>
     </div>
-
-    <div class="dot dot-1"></div>
-    <div class="dot dot-2"></div>
-
-    <div class="top-bar">
-      <span>After School Programme · Year 12</span>
-      <span>⬡ University Admission Test Prep</span>
+    <div class="divider"></div>
+    <p class="tagline">
+      For students who want to go <strong>further</strong>.
+      Explore real problems in <strong>Science, Technology,
+      Engineering &amp; Mathematics.</strong>
+    </p>
+    <div class="pillars">
+      <div class="pillar"><span class="pillar-icon">⚗️</span><div class="pillar-title">Science</div></div>
+      <div class="pillar"><span class="pillar-icon">💻</span><div class="pillar-title">Technology</div></div>
+      <div class="pillar"><span class="pillar-icon">⚙️</span><div class="pillar-title">Engineering</div></div>
+      <div class="pillar"><span class="pillar-icon">∑</span><div class="pillar-title">Mathematics</div></div>
     </div>
-
-    <div class="content">
-
-      <div class="headline-block">
-        <p class="eyebrow">// Launching March 2026</p>
-        <h1 class="headline">
-          <span class="stem">STEM</span>
-          <span class="society">Society</span>
-        </h1>
+    <div class="info-block">
+      <div class="info-item">
+        <div class="info-label">// Starts</div>
+        <div class="info-value">25 March<br>2026</div>
+        <div class="info-sub">Every week after school</div>
       </div>
-
-      <div class="divider"></div>
-
-      <p class="tagline">
-        For students who want to go <strong>further</strong>.
-        Explore real problems in <strong>Science, Technology,
-        Engineering &amp; Mathematics.</strong>
-      </p>
-
-      <div class="pillars">
-        <div class="pillar">
-          <span class="pillar-icon">⚗️</span>
-          <div class="pillar-title">Science</div>
-        </div>
-        <div class="pillar">
-          <span class="pillar-icon">💻</span>
-          <div class="pillar-title">Technology</div>
-        </div>
-        <div class="pillar">
-          <span class="pillar-icon">⚙️</span>
-          <div class="pillar-title">Engineering</div>
-        </div>
-        <div class="pillar">
-          <span class="pillar-icon">∑</span>
-          <div class="pillar-title">Mathematics</div>
-        </div>
+      <div class="info-item">
+        <div class="info-label">// Who</div>
+        <div class="info-value">Year 12<br>Only</div>
+        <div class="info-sub">STEM university applicants</div>
       </div>
-
-      <div class="info-block">
-        <div class="info-item">
-          <div class="info-label">// Starts</div>
-          <div class="info-value">25 March<br>2026</div>
-          <div class="info-sub">Every week after school</div>
-        </div>
-        <div class="info-item">
-          <div class="info-label">// Who</div>
-          <div class="info-value">Year 12<br>Only</div>
-          <div class="info-sub">STEM university applicants</div>
-        </div>
-        <div class="info-item">
-          <div class="info-label">// Time &amp; Room</div>
-          <div class="info-value">3:15–4:15<br>Rm 2.707</div>
-          <div class="info-sub">Every week after school</div>
-        </div>
+      <div class="info-item">
+        <div class="info-label">// Time &amp; Room</div>
+        <div class="info-value">3:15–4:15<br>Rm 2.707</div>
+        <div class="info-sub">Every week after school</div>
       </div>
-
-      <div class="cta-block">
-        <div class="cta-pill">Sign up now</div>
-        <div class="cta-sub">
-          <strong>Speak to your form tutor</strong> or<br>
-          ask a teacher to put your name down.<br>
-          <strong>First session: 25 March 2026.</strong>
-        </div>
-      </div>
-
     </div>
-
-    <div class="bottom-bar">
-      <span class="school">St Paul's Way STEM Society</span>
-      <span>Starting 25 · 03 · 2026</span>
+    <div class="cta-block">
+      <div class="cta-pill">Sign up now</div>
+      <div class="cta-sub">
+        <strong>Speak to your form tutor</strong> or<br>
+        ask a teacher to put your name down.<br>
+        <strong>First session: 25 March 2026.</strong>
+      </div>
     </div>
-
+  </div>
+  <div class="bottom-bar">
+    <span class="school">St Paul's Way STEM Society</span>
+    <span>Starting 25 · 03 · 2026</span>
   </div>
 </div>
-
 </body>
 </html>
