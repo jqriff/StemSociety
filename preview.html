@@ -1,0 +1,513 @@
+<html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>STEM Society Poster</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Barlow+Condensed:wght@300;400;600;800&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+–black: #050508;
+–white: #F5F3EE;
+–yellow: #E8D44D;
+–orange: #E8622A;
+–blue: #1A3D6E;
+–grid: #1a1a2a;
+}
+
+body {
+background: #0a0a0f;
+display: flex;
+justify-content: center;
+align-items: center;
+min-height: 100vh;
+font-family: ‘Space Mono’, monospace;
+}
+
+.poster {
+width: 700px;
+height: 990px;
+background: var(–black);
+position: relative;
+overflow: hidden;
+display: flex;
+flex-direction: column;
+}
+
+/* Blueprint grid background */
+.grid-bg {
+position: absolute;
+inset: 0;
+background-image:
+linear-gradient(rgba(26,61,110,0.18) 1px, transparent 1px),
+linear-gradient(90deg, rgba(26,61,110,0.18) 1px, transparent 1px);
+background-size: 40px 40px;
+z-index: 0;
+}
+
+/* Diagonal accent stripe */
+.stripe {
+position: absolute;
+top: -80px;
+right: -60px;
+width: 320px;
+height: 700px;
+background: var(–blue);
+transform: rotate(-12deg);
+z-index: 1;
+opacity: 0.5;
+}
+
+.stripe-2 {
+position: absolute;
+bottom: -100px;
+left: -80px;
+width: 260px;
+height: 500px;
+background: var(–orange);
+transform: rotate(-12deg);
+z-index: 1;
+opacity: 0.18;
+}
+
+/* Top bar */
+.top-bar {
+position: relative;
+z-index: 10;
+background: var(–yellow);
+padding: 10px 32px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+.top-bar span {
+font-family: ‘Space Mono’, monospace;
+font-size: 11px;
+letter-spacing: 0.2em;
+color: var(–black);
+text-transform: uppercase;
+font-weight: 700;
+}
+
+/* Main content area */
+.content {
+position: relative;
+z-index: 10;
+flex: 1;
+display: flex;
+flex-direction: column;
+padding: 0 42px;
+}
+
+/* Schematic circles / atom */
+.atom-wrap {
+position: absolute;
+top: 60px;
+right: 30px;
+width: 240px;
+height: 240px;
+z-index: 5;
+opacity: 0.55;
+}
+
+.atom-wrap svg {
+width: 100%;
+height: 100%;
+animation: rotateSlow 24s linear infinite;
+}
+
+@keyframes rotateSlow {
+to { transform: rotate(360deg); }
+}
+
+/* Headline block */
+.headline-block {
+margin-top: 52px;
+}
+
+.eyebrow {
+font-family: ‘Space Mono’, monospace;
+font-size: 11px;
+letter-spacing: 0.35em;
+color: var(–orange);
+text-transform: uppercase;
+margin-bottom: 14px;
+}
+
+.headline {
+font-family: ‘Bebas Neue’, sans-serif;
+font-size: 112px;
+line-height: 0.88;
+color: var(–white);
+letter-spacing: 0.01em;
+mix-blend-mode: normal;
+}
+
+.headline .stem {
+color: var(–yellow);
+display: block;
+}
+
+.headline .society {
+color: var(–white);
+display: block;
+font-size: 68px;
+letter-spacing: 0.06em;
+}
+
+/* Divider line */
+.divider {
+width: 100%;
+height: 1px;
+background: linear-gradient(90deg, var(–orange), transparent);
+margin: 28px 0;
+}
+
+/* Tagline */
+.tagline {
+font-family: ‘Barlow Condensed’, sans-serif;
+font-size: 19px;
+font-weight: 300;
+color: rgba(245,243,238,0.7);
+letter-spacing: 0.08em;
+line-height: 1.5;
+max-width: 380px;
+}
+
+.tagline strong {
+color: var(–white);
+font-weight: 600;
+}
+
+/* Pillars grid */
+.pillars {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 14px;
+margin-top: 36px;
+}
+
+.pillar {
+border: 1px solid rgba(255,255,255,0.1);
+padding: 16px 18px;
+position: relative;
+background: rgba(255,255,255,0.03);
+backdrop-filter: blur(4px);
+transition: border-color 0.3s;
+}
+
+.pillar::before {
+content: ‘’;
+position: absolute;
+top: 0; left: 0;
+width: 3px;
+height: 100%;
+}
+
+.pillar:nth-child(1)::before { background: #4ECDC4; }
+.pillar:nth-child(2)::before { background: var(–yellow); }
+.pillar:nth-child(3)::before { background: var(–orange); }
+.pillar:nth-child(4)::before { background: #A78BFA; }
+
+.pillar-icon {
+font-size: 22px;
+margin-bottom: 6px;
+display: block;
+}
+
+.pillar-title {
+font-family: ‘Barlow Condensed’, sans-serif;
+font-size: 15px;
+font-weight: 800;
+letter-spacing: 0.12em;
+text-transform: uppercase;
+color: var(–white);
+margin-bottom: 4px;
+}
+
+.pillar-desc {
+font-family: ‘Space Mono’, monospace;
+font-size: 9.5px;
+color: rgba(245,243,238,0.5);
+line-height: 1.6;
+}
+
+/* Info block */
+.info-block {
+margin-top: 20px;
+display: flex;
+gap: 0;
+border: 1px solid rgba(232,212,77,0.35);
+}
+
+.info-item {
+flex: 1;
+padding: 18px 22px;
+border-right: 1px solid rgba(232,212,77,0.2);
+}
+
+.info-item:last-child { border-right: none; }
+
+.info-label {
+font-family: ‘Space Mono’, monospace;
+font-size: 9px;
+letter-spacing: 0.25em;
+text-transform: uppercase;
+color: var(–yellow);
+margin-bottom: 6px;
+}
+
+.info-value {
+font-family: ‘Bebas Neue’, sans-serif;
+font-size: 26px;
+color: var(–white);
+letter-spacing: 0.04em;
+line-height: 1.1;
+}
+
+.info-sub {
+font-family: ‘Space Mono’, monospace;
+font-size: 9px;
+color: rgba(245,243,238,0.4);
+margin-top: 3px;
+}
+
+/* CTA */
+.cta-block {
+margin-top: 18px;
+display: flex;
+align-items: center;
+gap: 20px;
+}
+
+.cta-pill {
+background: var(–orange);
+color: var(–white);
+font-family: ‘Barlow Condensed’, sans-serif;
+font-size: 15px;
+font-weight: 800;
+letter-spacing: 0.14em;
+text-transform: uppercase;
+padding: 13px 28px;
+display: inline-block;
+}
+
+.cta-sub {
+font-family: ‘Space Mono’, monospace;
+font-size: 10px;
+color: rgba(245,243,238,0.45);
+line-height: 1.7;
+}
+
+.cta-sub strong {
+color: rgba(245,243,238,0.75);
+}
+
+/* Bottom bar */
+.bottom-bar {
+position: relative;
+z-index: 10;
+background: var(–blue);
+padding: 13px 42px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+.bottom-bar span {
+font-family: ‘Space Mono’, monospace;
+font-size: 10px;
+letter-spacing: 0.18em;
+color: rgba(245,243,238,0.6);
+text-transform: uppercase;
+}
+
+.bottom-bar .school {
+color: var(–white);
+font-weight: 700;
+}
+
+/* Coordinate annotations */
+.coord {
+position: absolute;
+font-family: ‘Space Mono’, monospace;
+font-size: 8px;
+color: rgba(26,61,110,0.6);
+letter-spacing: 0.15em;
+z-index: 3;
+}
+
+.coord-1 { top: 80px; left: 8px; writing-mode: vertical-lr; }
+.coord-2 { bottom: 80px; right: 8px; writing-mode: vertical-rl; transform: rotate(180deg); }
+
+/* Corner marks */
+.corner {
+position: absolute;
+width: 14px;
+height: 14px;
+z-index: 20;
+}
+.corner::before, .corner::after {
+content: ‘’;
+position: absolute;
+background: var(–yellow);
+opacity: 0.5;
+}
+.corner::before { width: 100%; height: 1px; top: 0; left: 0; }
+.corner::after  { width: 1px; height: 100%; top: 0; left: 0; }
+
+.corner.tr { top: 42px; right: 10px; transform: rotate(90deg); }
+.corner.bl { bottom: 42px; left: 10px; transform: rotate(270deg); }
+.corner.br { bottom: 42px; right: 10px; transform: rotate(180deg); }
+.corner.tl { top: 42px; left: 10px; }
+
+/* Schematic dots */
+.dot {
+position: absolute;
+width: 5px;
+height: 5px;
+border-radius: 50%;
+background: var(–orange);
+z-index: 6;
+opacity: 0.7;
+}
+.dot-1 { top: 175px; left: 38px; }
+.dot-2 { top: 175px; right: 38px; }
+
+</style>
+</head>
+<body>
+
+<div class="poster">
+  <div class="grid-bg"></div>
+  <div class="stripe"></div>
+  <div class="stripe-2"></div>
+
+  <!-- Corner marks -->
+
+  <div class="corner tl"></div>
+  <div class="corner tr"></div>
+  <div class="corner bl"></div>
+  <div class="corner br"></div>
+
+  <!-- Coordinate annotations -->
+
+  <div class="coord coord-1">51°30′N · 0°07′W · EST. 2026</div>
+  <div class="coord coord-2">SCIENCE · TECH · ENG · MATHS</div>
+
+  <!-- Atom / schematic SVG -->
+
+  <div class="atom-wrap">
+    <svg viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <ellipse cx="120" cy="120" rx="110" ry="42" stroke="#1A3D6E" stroke-width="1.2"/>
+      <ellipse cx="120" cy="120" rx="110" ry="42" stroke="#1A3D6E" stroke-width="1.2" transform="rotate(60 120 120)"/>
+      <ellipse cx="120" cy="120" rx="110" ry="42" stroke="#1A3D6E" stroke-width="1.2" transform="rotate(120 120 120)"/>
+      <circle cx="120" cy="120" r="14" fill="#E8D44D" opacity="0.9"/>
+      <circle cx="120" cy="120" r="6" fill="#050508"/>
+      <!-- electrons -->
+      <circle cx="230" cy="120" r="5" fill="#E8622A"/>
+      <circle cx="175" cy="27" r="5" fill="#4ECDC4"/>
+      <circle cx="65" cy="27" r="5" fill="#A78BFA"/>
+    </svg>
+  </div>
+
+  <!-- Schematic dots -->
+
+  <div class="dot dot-1"></div>
+  <div class="dot dot-2"></div>
+
+  <!-- Top bar -->
+
+  <div class="top-bar">
+    <span>After School Programme · Year 12</span>
+    <span>⬡ University Admission Test Prep</span>
+  </div>
+
+  <!-- Main content -->
+
+  <div class="content">
+
+```
+<div class="headline-block">
+  <p class="eyebrow">// Launching April 2026</p>
+  <h1 class="headline">
+    <span class="stem">STEM</span>
+    <span class="society">Society</span>
+  </h1>
+</div>
+
+<div class="divider"></div>
+
+<p class="tagline">
+  For students who want to go <strong>further</strong> —
+  explore real problems in <strong>Science, Technology,
+  Engineering &amp; Mathematics.</strong>
+</p>
+
+<!-- Four pillars -->
+<div class="pillars">
+  <div class="pillar">
+    <span class="pillar-icon">⚗️</span>
+    <div class="pillar-title">Science</div>
+  </div>
+  <div class="pillar">
+    <span class="pillar-icon">💻</span>
+    <div class="pillar-title">Technology</div>
+  </div>
+  <div class="pillar">
+    <span class="pillar-icon">⚙️</span>
+    <div class="pillar-title">Engineering</div>
+  </div>
+  <div class="pillar">
+    <span class="pillar-icon">∑</span>
+    <div class="pillar-title">Mathematics</div>
+  </div>
+</div>
+
+<!-- Info block -->
+<div class="info-block">
+  <div class="info-item">
+    <div class="info-label">// Starts</div>
+    <div class="info-value">15 April<br>2026</div>
+    <div class="info-sub">Every week after school</div>
+  </div>
+  <div class="info-item">
+    <div class="info-label">// Who</div>
+    <div class="info-value">Year 12<br>Only</div>
+    <div class="info-sub">STEM university applicants</div>
+  </div>
+  <div class="info-item">
+    <div class="info-label">// Time & Room</div>
+    <div class="info-value">3:15–4:15<br>Rm 2707</div>
+    <div class="info-sub">Every week after school</div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="cta-block">
+  <div class="cta-pill">Sign up now</div>
+  <div class="cta-sub">
+    <strong>Speak to your form tutor</strong> or<br>
+    ask a teacher to put your name down.<br>
+    <strong>First session: 15 April 2026.</strong>
+  </div>
+</div>
+```
+
+  </div>
+
+  <!-- Bottom bar -->
+
+  <div class="bottom-bar">
+    <span class="school">Your School STEM Society</span>
+    <span>Starting 15 · 04 · 2026</span>
+  </div>
+
+</div>
+
+</body>
+</html>
