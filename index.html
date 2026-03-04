@@ -2,298 +2,371 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>STEM Society Poster</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Barlow+Condensed:wght@300;400;600;800&display=swap" rel="stylesheet">
 <style>
-  @page { size: 210mm 297mm; margin: 0; }
-  *, ::before, ::after { margin: 0; padding: 0; box-sizing: border-box; }
 
-  html, body {
-    width: 210mm;
-    height: 297mm;
-    overflow: hidden;
-    background: rgb(5,5,8);
-  }
+*, ::before, ::after { margin: 0px; padding: 0px; box-sizing: border-box; }
 
-  .poster {
-    width: 210mm;
-    height: 297mm;
-    background: rgb(5,5,8);
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-  }
+@page { size: A4 portrait; margin: 0; }
 
-  .grid-bg {
-    position: absolute; inset: 0;
-    background-image:
-      linear-gradient(rgba(26,61,110,0.18) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(26,61,110,0.18) 1px, transparent 1px);
-    background-size: 12mm 12mm;
-    z-index: 0;
-  }
+body {
+  background: rgb(10, 10, 15);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: 'Space Mono', monospace;
+}
 
-  .stripe {
-    position: absolute;
-    top: -24mm; right: -18mm;
-    width: 96mm; height: 210mm;
-    background: rgb(26,61,110);
-    transform: rotate(-12deg);
-    z-index: 1; opacity: 0.5;
-  }
+.poster {
+  width: 794px;
+  height: 1123px;
+  background: rgb(5, 5, 8);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
 
-  .stripe-2 {
-    position: absolute;
-    bottom: -30mm; left: -24mm;
-    width: 78mm; height: 150mm;
-    background: rgb(232,98,42);
-    transform: rotate(-12deg);
-    z-index: 1; opacity: 0.18;
-  }
+.grid-bg {
+  position: absolute;
+  inset: 0px;
+  background-image:
+    linear-gradient(rgba(26, 61, 110, 0.18) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(26, 61, 110, 0.18) 1px, transparent 1px);
+  background-size: 45px 45px;
+  z-index: 0;
+}
 
-  .top-bar {
-    position: relative; z-index: 10;
-    background: rgb(232,212,77);
-    padding: 3mm 10mm;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-shrink: 0;
-  }
-  .top-bar span {
-    font-family: 'Courier New', monospace;
-    font-size: 3.3mm;
-    letter-spacing: 0.2em;
-    color: rgb(5,5,8);
-    text-transform: uppercase;
-    font-weight: 700;
-  }
+.stripe {
+  position: absolute;
+  top: -91px;
+  right: -68px;
+  width: 363px;
+  height: 794px;
+  background: rgb(26, 61, 110);
+  transform: rotate(-12deg);
+  z-index: 1;
+  opacity: 0.5;
+}
 
-  .content {
-    position: relative; z-index: 10;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    padding: 0 12mm;
-    min-height: 0;
-  }
+.stripe-2 {
+  position: absolute;
+  bottom: -113px;
+  left: -91px;
+  width: 295px;
+  height: 567px;
+  background: rgb(232, 98, 42);
+  transform: rotate(-12deg);
+  z-index: 1;
+  opacity: 0.18;
+}
 
-  .atom-wrap {
-    position: absolute;
-    top: 18mm; right: 9mm;
-    width: 72mm; height: 72mm;
-    z-index: 5; opacity: 0.55;
-  }
-  .atom-wrap svg { width: 100%; height: 100%; }
+.top-bar {
+  position: relative;
+  z-index: 10;
+  background: rgb(232, 212, 77);
+  padding: 11px 36px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-  .headline-block { margin-top: 16mm; }
+.top-bar span {
+  font-family: 'Space Mono', monospace;
+  font-size: 12.5px;
+  letter-spacing: 0.2em;
+  color: rgb(5, 5, 8);
+  text-transform: uppercase;
+  font-weight: 700;
+}
 
-  .eyebrow {
-    font-family: 'Courier New', monospace;
-    font-size: 3.3mm;
-    letter-spacing: 0.35em;
-    color: rgb(232,98,42);
-    text-transform: uppercase;
-    margin-bottom: 4mm;
-  }
+.content {
+  position: relative;
+  z-index: 10;
+  flex: 1 1 0%;
+  display: flex;
+  flex-direction: column;
+  padding: 0px 48px;
+}
 
-  .headline {
-    font-family: 'Arial Black', 'Arial', sans-serif;
-    font-size: 33mm;
-    line-height: 0.88;
-    font-weight: 900;
-    text-transform: uppercase;
-  }
-  .headline .stem   { color: rgb(232,212,77); display: block; }
-  .headline .society {
-    color: rgb(245,243,238);
-    display: block;
-    font-size: 20mm;
-    letter-spacing: 0.06em;
-  }
+.atom-wrap {
+  position: absolute;
+  top: 68px;
+  right: 34px;
+  width: 272px;
+  height: 272px;
+  z-index: 5;
+  opacity: 0.55;
+}
 
-  .divider {
-    width: 100%; height: 0.3mm;
-    background: linear-gradient(90deg, rgb(232,98,42), transparent);
-    margin: 8mm 0;
-    flex-shrink: 0;
-  }
+.atom-wrap svg {
+  width: 100%;
+  height: 100%;
+  animation: rotateSlow 24s linear infinite;
+}
 
-  .tagline {
-    font-family: 'Arial Narrow', Arial, sans-serif;
-    font-size: 5.7mm;
-    font-weight: 300;
-    color: rgba(245,243,238,0.7);
-    letter-spacing: 0.08em;
-    line-height: 1.5;
-    max-width: 114mm;
-  }
-  .tagline strong { color: rgb(245,243,238); font-weight: 600; }
+@keyframes rotateSlow {
+  100% { transform: rotate(360deg); }
+}
 
-  .pillars {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4mm;
-    margin-top: 11mm;
-    flex-shrink: 0;
-  }
-  .pillar {
-    border: 0.3mm solid rgba(255,255,255,0.1);
-    padding: 5mm 5.5mm;
-    position: relative;
-    background: rgba(255,255,255,0.03);
-  }
-  .pillar::before {
-    content: '';
-    position: absolute; top: 0; left: 0;
-    width: 0.9mm; height: 100%;
-  }
-  .pillar:nth-child(1)::before { background: rgb(78,205,196); }
-  .pillar:nth-child(2)::before { background: rgb(232,212,77); }
-  .pillar:nth-child(3)::before { background: rgb(232,98,42); }
-  .pillar:nth-child(4)::before { background: rgb(167,139,250); }
-  .pillar-icon { font-size: 6.6mm; margin-bottom: 2mm; display: block; }
-  .pillar-title {
-    font-family: 'Arial Narrow', Arial, sans-serif;
-    font-size: 4.5mm; font-weight: 800;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: rgb(245,243,238);
-  }
+.headline-block { margin-top: 59px; }
 
-  .info-block {
-    margin-top: 6mm;
-    display: flex;
-    gap: 0;
-    border: 0.3mm solid rgba(232,212,77,0.35);
-    flex-shrink: 0;
-  }
-  .info-item {
-    flex: 1;
-    padding: 5mm 6.5mm;
-    border-right: 0.3mm solid rgba(232,212,77,0.2);
-  }
-  .info-item:last-child { border-right: none; }
-  .info-label {
-    font-family: 'Courier New', monospace;
-    font-size: 2.7mm; letter-spacing: 0.25em;
-    text-transform: uppercase;
-    color: rgb(232,212,77);
-    margin-bottom: 2mm;
-  }
-  .info-value {
-    font-family: 'Arial Black', Arial, sans-serif;
-    font-size: 7.8mm;
-    color: rgb(245,243,238);
-    letter-spacing: 0.04em;
-    line-height: 1.1;
-    font-weight: 900;
-  }
-  .info-sub {
-    font-family: 'Courier New', monospace;
-    font-size: 2.7mm;
-    color: rgba(245,243,238,0.4);
-    margin-top: 1mm;
-  }
+.eyebrow {
+  font-family: 'Space Mono', monospace;
+  font-size: 12.5px;
+  letter-spacing: 0.35em;
+  color: rgb(232, 98, 42);
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
 
-  .cta-block {
-    margin-top: 5mm;
-    margin-bottom: 6mm;
-    display: flex;
-    align-items: center;
-    gap: 6mm;
-    flex-shrink: 0;
-  }
-  .cta-pill {
-    background: rgb(232,98,42);
-    color: rgb(245,243,238);
-    font-family: 'Arial Narrow', Arial, sans-serif;
-    font-size: 4.5mm; font-weight: 800;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    padding: 4mm 8mm;
-    display: inline-block;
-    white-space: nowrap;
-  }
-  .cta-sub {
-    font-family: 'Courier New', monospace;
-    font-size: 3mm;
-    color: rgba(245,243,238,0.45);
-    line-height: 1.7;
-  }
-  .cta-sub strong { color: rgba(245,243,238,0.75); }
+.headline {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 127px;
+  line-height: 0.88;
+  color: rgb(245, 243, 238);
+  letter-spacing: 0.01em;
+  mix-blend-mode: normal;
+}
 
-  .bottom-bar {
-    position: relative; z-index: 10;
-    background: rgb(26,61,110);
-    padding: 4mm 12mm;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-shrink: 0;
-  }
-  .bottom-bar span {
-    font-family: 'Courier New', monospace;
-    font-size: 3mm; letter-spacing: 0.18em;
-    color: rgba(245,243,238,0.6);
-    text-transform: uppercase;
-  }
-  .bottom-bar .school { color: rgb(245,243,238); font-weight: 700; }
+.headline .stem { color: rgb(232, 212, 77); display: block; }
 
-  .coord {
-    position: absolute;
-    font-family: 'Courier New', monospace;
-    font-size: 2.4mm;
-    color: rgba(26,61,110,0.6);
-    letter-spacing: 0.15em;
-    z-index: 3;
-  }
-  .coord-1 { top: 24mm; left: 2.4mm; writing-mode: vertical-lr; }
-  .coord-2 { bottom: 24mm; right: 2.4mm; writing-mode: vertical-rl; transform: rotate(180deg); }
+.headline .society {
+  color: rgb(245, 243, 238);
+  display: block;
+  font-size: 77px;
+  letter-spacing: 0.06em;
+}
 
-  .corner { position: absolute; width: 4.2mm; height: 4.2mm; z-index: 20; }
-  .corner::before, .corner::after {
-    content: ''; position: absolute;
-    background: rgb(232,212,77); opacity: 0.5;
-  }
-  .corner::before { width: 100%; height: 0.3mm; top: 0; left: 0; }
-  .corner::after  { width: 0.3mm; height: 100%; top: 0; left: 0; }
-  .corner.tl { top: 12.6mm; left: 3mm; }
-  .corner.tr { top: 12.6mm; right: 3mm; transform: rotate(90deg); }
-  .corner.bl { bottom: 12.6mm; left: 3mm; transform: rotate(270deg); }
-  .corner.br { bottom: 12.6mm; right: 3mm; transform: rotate(180deg); }
+.divider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, rgb(232, 98, 42), transparent);
+  margin: 32px 0px;
+}
 
-  .dot { position: absolute; width: 1.5mm; height: 1.5mm; border-radius: 50%; background: rgb(232,98,42); z-index: 6; opacity: 0.7; }
-  .dot-1 { top: 52.5mm; left: 11.4mm; }
-  .dot-2 { top: 52.5mm; right: 11.4mm; }
+.tagline {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 21.5px;
+  font-weight: 300;
+  color: rgba(245, 243, 238, 0.7);
+  letter-spacing: 0.08em;
+  line-height: 1.5;
+  max-width: 431px;
+}
+
+.tagline strong { color: rgb(245, 243, 238); font-weight: 600; }
+
+.pillars {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 41px;
+}
+
+.pillar {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 18px 20px;
+  position: relative;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(4px);
+  transition: border-color 0.3s;
+}
+
+.pillar::before {
+  content: '';
+  position: absolute;
+  top: 0px; left: 0px;
+  width: 3px; height: 100%;
+}
+
+.pillar:nth-child(1)::before { background: rgb(78, 205, 196); }
+.pillar:nth-child(2)::before { background: rgb(232, 212, 77); }
+.pillar:nth-child(3)::before { background: rgb(232, 98, 42); }
+.pillar:nth-child(4)::before { background: rgb(167, 139, 250); }
+
+.pillar-icon { font-size: 25px; margin-bottom: 7px; display: block; }
+
+.pillar-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 17px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgb(245, 243, 238);
+  margin-bottom: 4px;
+}
+
+.pillar-desc {
+  font-family: 'Space Mono', monospace;
+  font-size: 10.8px;
+  color: rgba(245, 243, 238, 0.5);
+  line-height: 1.6;
+}
+
+.info-block {
+  margin-top: 23px;
+  display: flex;
+  gap: 0px;
+  border: 1px solid rgba(232, 212, 77, 0.35);
+}
+
+.info-item {
+  flex: 1 1 0%;
+  padding: 20px 25px;
+  border-right: 1px solid rgba(232, 212, 77, 0.2);
+}
+
+.info-item:last-child { border-right: none; }
+
+.info-label {
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: rgb(232, 212, 77);
+  margin-bottom: 7px;
+}
+
+.info-value {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 29.5px;
+  color: rgb(245, 243, 238);
+  letter-spacing: 0.04em;
+  line-height: 1.1;
+}
+
+.info-sub {
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  color: rgba(245, 243, 238, 0.4);
+  margin-top: 3px;
+}
+
+.cta-block {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  gap: 23px;
+}
+
+.cta-pill {
+  background: rgb(232, 98, 42);
+  color: rgb(245, 243, 238);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 17px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 15px 32px;
+  display: inline-block;
+}
+
+.cta-sub {
+  font-family: 'Space Mono', monospace;
+  font-size: 11.3px;
+  color: rgba(245, 243, 238, 0.45);
+  line-height: 1.7;
+}
+
+.cta-sub strong { color: rgba(245, 243, 238, 0.75); }
+
+.bottom-bar {
+  position: relative;
+  z-index: 10;
+  background: rgb(26, 61, 110);
+  padding: 15px 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bottom-bar span {
+  font-family: 'Space Mono', monospace;
+  font-size: 11.3px;
+  letter-spacing: 0.18em;
+  color: rgba(245, 243, 238, 0.6);
+  text-transform: uppercase;
+}
+
+.bottom-bar .school { color: rgb(245, 243, 238); font-weight: 700; }
+
+.coord {
+  position: absolute;
+  font-family: 'Space Mono', monospace;
+  font-size: 9px;
+  color: rgba(26, 61, 110, 0.6);
+  letter-spacing: 0.15em;
+  z-index: 3;
+}
+
+.coord-1 { top: 91px; left: 9px; writing-mode: vertical-lr; }
+.coord-2 { bottom: 91px; right: 9px; writing-mode: vertical-rl; transform: rotate(180deg); }
+
+.corner { position: absolute; width: 16px; height: 16px; z-index: 20; }
+
+.corner::before, .corner::after { position: absolute; background: rgb(232, 212, 77); opacity: 0.5; }
+.corner::before { width: 100%; height: 1px; top: 0px; left: 0px; }
+.corner::after  { width: 1px; height: 100%; top: 0px; left: 0px; }
+
+.corner.tl { top: 48px; left: 11px; }
+.corner.tr { top: 48px; right: 11px; transform: rotate(90deg); }
+.corner.bl { bottom: 48px; left: 11px; transform: rotate(270deg); }
+.corner.br { bottom: 48px; right: 11px; transform: rotate(180deg); }
+
+.dot { position: absolute; width: 5.7px; height: 5.7px; border-radius: 50%; background: rgb(232, 98, 42); z-index: 6; opacity: 0.7; }
+.dot-1 { top: 198px; left: 43px; }
+.dot-2 { top: 198px; right: 43px; }
 </style>
 </head>
 <body>
+
 <div class="poster">
   <div class="grid-bg"></div>
   <div class="stripe"></div>
   <div class="stripe-2"></div>
-  <div class="corner tl"></div><div class="corner tr"></div>
-  <div class="corner bl"></div><div class="corner br"></div>
+
+  <!-- Corner marks -->
+  <div class="corner tl"></div>
+  <div class="corner tr"></div>
+  <div class="corner bl"></div>
+  <div class="corner br"></div>
+
+  <!-- Coordinate annotations -->
   <div class="coord coord-1">51°30′N · 0°07′W · EST. 2026</div>
   <div class="coord coord-2">SCIENCE · TECH · ENG · MATHS</div>
+
+  <!-- Atom / schematic SVG -->
   <div class="atom-wrap">
     <svg viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <ellipse cx="120" cy="120" rx="110" ry="42" stroke="#1A3D6E" stroke-width="1.2"/>
-      <ellipse cx="120" cy="120" rx="110" ry="42" stroke="#1A3D6E" stroke-width="1.2" transform="rotate(60 120 120)"/>
-      <ellipse cx="120" cy="120" rx="110" ry="42" stroke="#1A3D6E" stroke-width="1.2" transform="rotate(120 120 120)"/>
-      <circle cx="120" cy="120" r="14" fill="#E8D44D" opacity="0.9"/>
-      <circle cx="120" cy="120" r="6" fill="#050508"/>
-      <circle cx="230" cy="120" r="5" fill="#E8622A"/>
-      <circle cx="175" cy="27" r="5" fill="#4ECDC4"/>
-      <circle cx="65" cy="27" r="5" fill="#A78BFA"/>
+      <ellipse cx="120" cy="120" rx="110" ry="42" stroke="#1A3D6E" stroke-width="1.2"></ellipse>
+      <ellipse cx="120" cy="120" rx="110" ry="42" stroke="#1A3D6E" stroke-width="1.2" transform="rotate(60 120 120)"></ellipse>
+      <ellipse cx="120" cy="120" rx="110" ry="42" stroke="#1A3D6E" stroke-width="1.2" transform="rotate(120 120 120)"></ellipse>
+      <circle cx="120" cy="120" r="14" fill="#E8D44D" opacity="0.9"></circle>
+      <circle cx="120" cy="120" r="6" fill="#050508"></circle>
+      <!-- electrons -->
+      <circle cx="230" cy="120" r="5" fill="#E8622A"></circle>
+      <circle cx="175" cy="27" r="5" fill="#4ECDC4"></circle>
+      <circle cx="65" cy="27" r="5" fill="#A78BFA"></circle>
     </svg>
   </div>
-  <div class="dot dot-1"></div><div class="dot dot-2"></div>
+
+  <!-- Schematic dots -->
+  <div class="dot dot-1"></div>
+  <div class="dot dot-2"></div>
+
+  <!-- Top bar -->
   <div class="top-bar">
     <span>After School Programme · Year 12</span>
     <span>⬡ University Admission Test Prep</span>
   </div>
+
+  <!-- Main content -->
   <div class="content">
+
     <div class="headline-block">
       <p class="eyebrow">// Launching March 2026</p>
       <h1 class="headline">
@@ -301,18 +374,36 @@
         <span class="society">Society</span>
       </h1>
     </div>
+
     <div class="divider"></div>
+
     <p class="tagline">
       For students who want to go <strong>further</strong>.
       Explore real problems in <strong>Science, Technology,
       Engineering &amp; Mathematics.</strong>
     </p>
+
+    <!-- Four pillars -->
     <div class="pillars">
-      <div class="pillar"><span class="pillar-icon">⚗️</span><div class="pillar-title">Science</div></div>
-      <div class="pillar"><span class="pillar-icon">💻</span><div class="pillar-title">Technology</div></div>
-      <div class="pillar"><span class="pillar-icon">⚙️</span><div class="pillar-title">Engineering</div></div>
-      <div class="pillar"><span class="pillar-icon">∑</span><div class="pillar-title">Mathematics</div></div>
+      <div class="pillar">
+        <span class="pillar-icon">⚗️</span>
+        <div class="pillar-title">Science</div>
+      </div>
+      <div class="pillar">
+        <span class="pillar-icon">💻</span>
+        <div class="pillar-title">Technology</div>
+      </div>
+      <div class="pillar">
+        <span class="pillar-icon">⚙️</span>
+        <div class="pillar-title">Engineering</div>
+      </div>
+      <div class="pillar">
+        <span class="pillar-icon">∑</span>
+        <div class="pillar-title">Mathematics</div>
+      </div>
     </div>
+
+    <!-- Info block -->
     <div class="info-block">
       <div class="info-item">
         <div class="info-label">// Starts</div>
@@ -330,6 +421,8 @@
         <div class="info-sub">Every week after school</div>
       </div>
     </div>
+
+    <!-- CTA -->
     <div class="cta-block">
       <div class="cta-pill">Sign up now</div>
       <div class="cta-sub">
@@ -338,11 +431,16 @@
         <strong>First session: 25 March 2026.</strong>
       </div>
     </div>
+
   </div>
+
+  <!-- Bottom bar -->
   <div class="bottom-bar">
     <span class="school">St Paul's Way STEM Society</span>
     <span>Starting 25 · 03 · 2026</span>
   </div>
+
 </div>
+
 </body>
 </html>
